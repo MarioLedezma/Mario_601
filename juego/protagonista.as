@@ -3,6 +3,8 @@
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	
+	
+	
 	public class protagonista extends MovieClip {
 		private var izq: Boolean = false;
 		private var der: Boolean = false;
@@ -35,20 +37,20 @@
 				}
 				public function keydown(e: KeyboardEvent):void{
 					switch (e.keyCode){
-						case 68:
+						case 39:
 							der=true;
 							break;
-						case 65:
+						case 37:
 							izq=true;
 							break;
 						}
 					}
 					public function keyup(e: KeyboardEvent):void{
 						switch (e.keyCode){
-						case 68:
+						case 39:
 							der=false;
 							break;
-						case 65:
+						case 37:
 							izq=false;
 							break;
 						}
