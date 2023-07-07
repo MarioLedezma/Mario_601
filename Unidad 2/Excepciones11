@@ -1,0 +1,35 @@
+package excepciones11;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class Excepciones11 {
+
+    public static void main(String[] args) {
+       
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("ruta/archivo.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+               
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: No se pudo encontrar el archivo especificado.");
+        } catch (IOException e) {
+            System.out.println("Error: Ocurrió un problema de entrada/salida.");
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    System.out.println("Error: No se pudo cerrar el archivo.");
+                }
+            }
+        }
+        
+    }
+    
+}
