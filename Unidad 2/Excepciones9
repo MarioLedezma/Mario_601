@@ -1,0 +1,22 @@
+package excepciones9;
+
+public class Excepciones9 {
+
+    public static void main(String[] args) {
+       
+        try {
+            String str = null;
+            
+            if (str != null) {
+                int length = str.length(); // Intentamos acceder a un método en una referencia null
+                System.out.println("La longitud de la cadena es: " + length);
+            } else {
+                System.out.println("Error: La cadena es null.");
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Error: La referencia es null, no se puede acceder al método o propiedad.");
+        }
+        
+    }
+    
+}
