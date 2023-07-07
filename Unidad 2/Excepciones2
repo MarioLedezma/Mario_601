@@ -1,1 +1,26 @@
+package excepciones2;
+import javax.swing.JOptionPane;
 
+public class Excepciones2 {
+
+    public static void main(String[] args) {
+       
+        
+        int x, y;
+        
+        try {
+        x=Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa numero 1: ", "Solicita datos ", 3));
+        y=Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa numero 2: ", "Solicita datos ", 3));
+        JOptionPane.showMessageDialog(null, "La división de " + x + "/" + y + "es" + (x/y), "Mostrando resultado", 1);
+        }
+        catch (NumberFormatException n)
+        {
+            System.out.println(n.getMessage() + " No es número ENTERO");
+        }
+        catch (ArithmeticException a){
+            System.out.println(a.getMessage() + " No se puede dividir entre 0");
+        }
+        
+    }
+    
+}
